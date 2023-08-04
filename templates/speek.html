@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Virtual Assistance</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+        
+        h1 {
+            text-align: center;
+        }
+        
+        #container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        #output {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #f5f5f5;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            text-align: center;
+            width: 400px;
+        }
+        
+        #output-text {
+            margin: 0;
+        }
+        
+        #input {
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        #response-text {
+            margin-top: 10px;
+            padding: 10px;
+            background-color: #f5f5f5;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            width: 600px;
+            height: 200px;
+            resize: none;
+        }
+        
+        button {
+            margin-top: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Virtual Assistance</h1>
+    <div id="container">
+        <div id="output">
+            <p id="output-text"></p>
+        </div>
+        <div id="input">
+            <button onclick="startListening()">Start Listening</button>
+            <textarea id="response-text" readonly></textarea>
+        </div>
+    </div>
+
+  
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Virtual Assistant</title>
+    <style>
+        .microphone {
+            font-size: 48px;
+            color: red;
+            animation: blink-animation 1s infinite;
+            -webkit-animation: blink-animation 1s infinite;
+        }
+
+        @keyframes blink-animation {
+            50% {
+                opacity: 0;
+            }
+        }
+
+        @-webkit-keyframes blink-animation {
+            50% {
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Virtual Assistant</h1>
+
+    <div id="listening-section">
+        <h2>Listening...</h2>
+        <i class="microphone fas fa-microphone"></i>
+    </div>
+
+    <div id="output-section">
+        <h2>Output</h2>
+        <p id="command-output"></p>
+    </div>
+
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script>
+        const listeningSection = document.getElementById('listening-section');
+        const outputSection = document.getElementById('output-section');
+        const commandOutput = document.getElementById('command-output');
+
+        function showListeningState() {
+            listeningSection.style.display = 'block';
+            outputSection.style.display = 'none';
+        }
+
+        function showOutputState(output) {
+            listeningSection.style.display = 'none';
+            outputSection.style.display = 'block';
+            commandOutput.textContent = output;
+        }
+
+        // Simulating the listening and output
+        function simulateListening() {
+            showListeningState();
+
+            // Simulating the speech recognition delay
+            setTimeout(function () {
+                const command = 'Hello, how can I assist you?';
+                showOutputState(command);
+            }, 2000); // Adjust the delay as needed
+        }
+
+        simulateListening(); // Call this function when the page loads or whenever you want to start listening
+    </script>
+</body>
+
+</html>
